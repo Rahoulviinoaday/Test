@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +9,7 @@ using SeleniumWebdriver.ComponentHelper;
 using OpenQA.Selenium;
 using System.Threading;
 using OpenQA.Selenium.Interactions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SeleniumWebdriver.TestScript.MouseAction
 {

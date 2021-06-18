@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SeleniumWebdriver.TestScript.Log4net
 {
     [TestClass]
-    class TestLogger
+    public class TestLogger
     {
         [TestMethod]
 
