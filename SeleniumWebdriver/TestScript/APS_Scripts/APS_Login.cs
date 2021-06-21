@@ -30,15 +30,15 @@ namespace SeleniumWebdriver.TestScript.ScreenShot
             
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
 
-            LinkHelper.ClickLink(By.TagName("button"));
-
+            LinkHelper.ClickLink(By.XPath("//*[@class='card-body']/form/div[3]"));
+                Thread.Sleep(3000);
             // below code is for switch window 
-            Thread.Sleep(4000);
+        
         
             var newWindowHandle = ObjectRepository.Driver.WindowHandles[1];
             Assert.IsTrue(!string.IsNullOrEmpty(newWindowHandle));
             ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[1]);
-
+            Thread.Sleep(2000);
             TextBoxHelper.TypeInTextBox(By.Id("i0116"), ObjectRepository.Config.GetUsername());
             LinkHelper.ClickLink(By.Id("idSIButton9"));
             TextBoxHelper.TypeInTextBox(By.Id("i0118"), ObjectRepository.Config.GetPassword());
