@@ -14,8 +14,8 @@ namespace SeleniumWebdriver.PageObject
     public class LoginPage
     {
         #region WebElement
-        private By LoginBtton = By.XPath("//button[contains(text(),'Login')]");
-        private By SigninTextBox = By.XPath("//*[@id='i0116']");
+        private By LoginBtton = By.XPath("//*[@class='card-body']/form/div[3]");
+        private By SigninTextBox = By.XPath("//input[@type='email']");
         private By signinNext = By.Id("idSIButton9");
         private By EnterPasswordTextBox = By.XPath("//*[@name='passwd']");
         private By Forgotpassword = By.XPath("//a[@id='idA_PWD_ForgotPassword']");

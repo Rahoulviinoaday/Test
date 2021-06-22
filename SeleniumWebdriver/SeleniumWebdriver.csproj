@@ -111,6 +111,7 @@
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
+    <Compile Include="StepDefination\Login.cs" />
     <Compile Include="TestScript\APS_Scripts\APS_Login.cs" />
     <Compile Include="TestScript\APS_Scripts\CreateNewWorksSpace.cs" />
     <Compile Include="TestScript\APS_Scripts\DeleteRecords.cs" />
@@ -134,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="FeatureFile\Login.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
