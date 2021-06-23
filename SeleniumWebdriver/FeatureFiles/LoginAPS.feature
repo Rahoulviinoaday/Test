@@ -1,8 +1,5 @@
 ﻿Feature: Login and create the New workspace for APS application
 	
-
-
-
 Scenario: Login flow of APS 
 	Given user is at login page 
 	When the user click on login button
@@ -21,8 +18,8 @@ Background: Pre-Condition
 
 Scenario: Create a new workspace
 	When user is click on Create new workspce
-	Then USer should see the new workspace form 
-	When User enter the details in form details
-	And click on Create button 
+	Then User should see the new workspace form 
+	When  User enter the details in form details
+	When click on Create button 
 	Then New workspace should be created
 	And USer should be at Home page 

@@ -10,10 +10,10 @@ using System.Text;
 using System.Threading;
 using TechTalk.SpecFlow;
 
-namespace SeleniumWebdriver.StepDefination
+namespace SeleniumWebdriver.StepDefinition
 {
     [Binding]
-    public sealed class Login
+    public sealed class LoginAPS
     {
 
         #region Given
@@ -90,19 +90,19 @@ namespace SeleniumWebdriver.StepDefination
         {
             TextBoxHelper.TypeInTextBox(By.Id("i0116"), ObjectRepository.Config.GetUsername());
         }
-       
-      
+
+
         [Then(@"user is present with confirmation screen")]
         public void ThenUserIsPresentWithConfirmationScreen()
         {
-           // ButtonHelper.ClickButton(By.CssSelector("#idSIButton9"));
+            // ButtonHelper.ClickButton(By.CssSelector("#idSIButton9"));
         }
-        
+
 
         [Then(@"User should be at home page")]
         public void ThenUserShouldBeAtHomePage()
         {
-           
+
             var dashWindowHandle = ObjectRepository.Driver.WindowHandles[0];
             Assert.IsTrue(!string.IsNullOrEmpty(dashWindowHandle));
             ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[0]);
@@ -111,16 +111,16 @@ namespace SeleniumWebdriver.StepDefination
             Thread.Sleep(2000);
         }
 
-        
-        [Then(@"USer should see the new workspace form")]
-        public void ThenUSerShouldSeeTheNewWorkspaceForm()
+
+        [Then(@"User should see the new workspace form")]
+        public void ThenUserShouldSeeTheNewWorkspaceForm()
         {
             var dashWindowHandle = ObjectRepository.Driver.WindowHandles[0];
             Assert.IsTrue(!string.IsNullOrEmpty(dashWindowHandle));
             ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[0]);
             System.Threading.Thread.Sleep(4000);
         }
-        
+
         [Then(@"New workspace should be created")]
         public void ThenNewWorkspaceShouldBeCreated()
         {
@@ -130,10 +130,30 @@ namespace SeleniumWebdriver.StepDefination
         [Then(@"USer should be at Home page")]
         public void ThenUSerShouldBeAtHomePage()
         {
-           // ScenarioContext.Current.Pending();
+            // ScenarioContext.Current.Pending();
         }
 
         #endregion
+        [Given(@"user is on Home page")]
+        public void GivenUserIsOnHomePage()
+        {
+
+            Assert.IsTrue(GenericHelper.IsElementPresent(By.XPath("//ul[@class='ml-auto navbar-nav']/li[2]")));
+            //var dashWindowHandle = ObjectRepository.Driver.WindowHandles[0];
+            //Assert.IsTrue(!string.IsNullOrEmpty(dashWindowHandle));
+            //ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[0]);
+            //System.Threading.Thread.Sleep(4000);
+            //ObjectRepository.Driver.Manage().Window.Maximize();
+            //Thread.Sleep(2000);
+        }
+
+        [Given(@"Home page is visible")]
+        public void GivenHomePageIsVisible()
+        {
+            Assert.IsTrue(GenericHelper.IsElementPresent(By.XPath("//*[@class='navbar-brand']")));
+
+        }
+
 
 
     }

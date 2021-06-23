@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="BaseClasses\BaseClass.cs" />
     <Compile Include="BaseClasses\PageBase.cs" />
+    <Compile Include="ComponentHelper\AssertHelper.cs" />
     <Compile Include="ComponentHelper\BrowserHelper.cs" />
     <Compile Include="ComponentHelper\ButtonHelper.cs" />
     <Compile Include="ComponentHelper\CheckBoxHelper.cs" />
@@ -111,7 +112,7 @@
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
-    <Compile Include="StepDefination\Login.cs" />
+    <Compile Include="StepDefinition\LoginAPS.cs" />
     <Compile Include="TestScript\APS_Scripts\APS_Login.cs" />
     <Compile Include="TestScript\APS_Scripts\CreateNewWorksSpace.cs" />
     <Compile Include="TestScript\APS_Scripts\DeleteRecords.cs" />
@@ -135,7 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="FeatureFile\Login.feature" />
+    <None Include="FeatureFiles\LoginAPS.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

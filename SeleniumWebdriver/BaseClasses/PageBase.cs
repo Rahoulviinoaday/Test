@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
+using SeleniumWebdriver.ComponentHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,34 @@ namespace SeleniumWebdriver.BaseClasses
     {
         private IWebDriver driver;
 
-      //  public PageBase (IWebDriver )
+        [FindsBy(How = How.LinkText, Using = "Home")]
+        private IWebElement HomeLink;
+
+        [Obsolete]
+        public PageBase(IWebDriver _driver)
+        {
+            PageFactory.InitElements(_driver, this);
+            this.driver = _driver;
+        }
+
+        public void Logout()
+        {
+            if (GenericHelper.IsElementPresent(By.XPath("//div[@id='header']/ul[1]/li[11]/a")))
+            {
+                ButtonHelper.ClickButton(By.XPath("//div[@id='header']/ul[1]/li[11]/a"));
+            }
+            GenericHelper.WaitForWebElementInPage(By.Id("welcome"), TimeSpan.FromSeconds(30));
+
+        }
+
+        protected void NaviGateToHomePage()
+        {
+            HomeLink.Click();
+        }
+
+        public string Title
+        {
+            get { return driver.Title; }
+        }
     }
-}
+    }
