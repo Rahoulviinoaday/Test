@@ -3,17 +3,13 @@ using OpenQA.Selenium;
 using SeleniumWebdriver.ComponentHelper;
 using SeleniumWebdriver.PageObject;
 using SeleniumWebdriver.Settings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace SeleniumWebdriver.StepDefinition
 {
     [Binding]
-    public sealed class LoginAPS
+    public sealed class Login
     {
 
         #region Given
@@ -55,27 +51,7 @@ namespace SeleniumWebdriver.StepDefinition
             ButtonHelper.ClickButton(By.CssSelector("#idSIButton9"));
             Thread.Sleep(2000);
         }
-        [When(@"user is click on Create new workspce")]
-        public void WhenUserIsClickOnCreateNewWorkspce()
-        {
-            ObjectRepository.Driver.FindElement(By.XPath("//div[@class='dashboard-widgets']/div[1]")).Click();
-        }
-        [When(@"User enter the details in form details")]
-        public void WhenUserEnterTheDetailsInFormDetails()
-        {
-            ObjectRepository.Driver.FindElement(By.XPath("//input[@id='workspaceNameInput']")).SendKeys("Automation Workspace 100");
-            ObjectRepository.Driver.FindElement(By.XPath("//input[@id='workspaceSubjectInput']")).SendKeys("Automation CaseNumber 100");
-            ObjectRepository.Driver.FindElement(By.XPath("//input[@id='workspaceClaimantsInput']")).SendKeys("Automation Claimants John");
-            ObjectRepository.Driver.FindElement(By.XPath("//input[@id='workspaceDefendantsInput']")).SendKeys("Automation Claimants John");
-        }
-
-        [When(@"click on Create button")]
-        public void WhenClickOnCreateButton()
-        {
-            ObjectRepository.Driver.FindElement(By.XPath("//div[contains(text(),'Create')]")).Click();
-        }
-
-
+        
         #endregion
         #region
         [Then(@"user is present with name window")]
@@ -109,28 +85,6 @@ namespace SeleniumWebdriver.StepDefinition
             System.Threading.Thread.Sleep(4000);
             ObjectRepository.Driver.Manage().Window.Maximize();
             Thread.Sleep(2000);
-        }
-
-
-        [Then(@"User should see the new workspace form")]
-        public void ThenUserShouldSeeTheNewWorkspaceForm()
-        {
-            var dashWindowHandle = ObjectRepository.Driver.WindowHandles[0];
-            Assert.IsTrue(!string.IsNullOrEmpty(dashWindowHandle));
-            ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[0]);
-            System.Threading.Thread.Sleep(4000);
-        }
-
-        [Then(@"New workspace should be created")]
-        public void ThenNewWorkspaceShouldBeCreated()
-        {
-            //ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"USer should be at Home page")]
-        public void ThenUSerShouldBeAtHomePage()
-        {
-            // ScenarioContext.Current.Pending();
         }
 
         #endregion
