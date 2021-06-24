@@ -1,5 +1,8 @@
 ﻿Feature: Login to APS application
-	
+
+Background: Pre-Condition
+	Given user is on Home page
+	And Home page is visible
 Scenario: Login flow of APS 
 	Given user is at login page 
 	When the user click on login button
