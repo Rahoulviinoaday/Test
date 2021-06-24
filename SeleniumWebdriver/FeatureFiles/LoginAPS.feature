@@ -1,9 +1,5 @@
 ﻿Feature: Login and create the New workspace for APS application
 	
-Background: Pre-Condition
-	Given user is on Home page
-	And Home page is visible
-
 Scenario: Login flow of APS 
 	Given user is at login page 
 	When the user click on login button
@@ -16,7 +12,9 @@ Scenario: Login flow of APS
 	When user click on yes button 
 	Then User should be at home page 
 
-
+Background: Pre-Condition
+	Given user is on Home page
+	And Home page is visible
 
 Scenario: Create a new workspace
 	When user is click on Create new workspce
