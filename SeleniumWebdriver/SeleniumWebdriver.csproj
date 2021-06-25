@@ -64,6 +64,9 @@
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\..\..\..\..\..\..\Automation\Auto_framework\Specflowsourcecode\SeleniumWebdriver\bin\Debug\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
     <Reference Include="Utf8Json, Version=1.3.7.0, Culture=neutral, PublicKeyToken=8a73d3ba7e392e27, processorArchitecture=MSIL">
       <HintPath>..\packages\Utf8Json.1.3.7\lib\net45\Utf8Json.dll</HintPath>
     </Reference>
@@ -106,7 +109,6 @@
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
-    <Compile Include="StepDefination\BindingAttribute.cs" />
     <Compile Include="StepDefination\CreateNewWorkspace.cs" />
     <Compile Include="StepDefination\Login.cs" />
     <Compile Include="TestScript\APS_Scripts\APS_Login.cs" />
