@@ -99,7 +99,7 @@ namespace SeleniumWebdriver.StepDefination
             Assert.IsTrue(GenericHelper.IsElementPresent(By.XPath("//ul[@class='ml-auto navbar-nav']/li[2]")));
         }
 
-
+    
 
     }
 }
