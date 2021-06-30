@@ -11,17 +11,17 @@ namespace SeleniumWebdriver.BaseClasses
 {
     public class PageBase
     {
-        private IWebDriver driver;
+        //private IWebDriver driver;
 
-        [FindsBy(How = How.LinkText, Using = "Home")]
-        private IWebElement HomeLink;
+        //[FindsBy(How = How.LinkText, Using = "Home")]
+        //private IWebElement HomeLink;
 
-        [Obsolete]
-        public PageBase(IWebDriver _driver)
-        {
-            PageFactory.InitElements(_driver, this);
-            this.driver = _driver;
-        }
+        //[Obsolete]
+        //public PageBase(IWebDriver _driver)
+        //{
+        //    PageFactory.InitElements(_driver, this);
+        //    this.driver = _driver;
+        //}
 
         public void Logout()
         {
@@ -33,14 +33,14 @@ namespace SeleniumWebdriver.BaseClasses
 
         }
 
-        protected void NaviGateToHomePage()
-        {
-            HomeLink.Click();
-        }
+        //protected void NaviGateToHomePage()
+        //{
+        //    HomeLink.Click();
+        //}
 
-        public string Title
-        {
-            get { return driver.Title; }
-        }
+        //public string Title
+        //{
+        //    get { return driver.Title; }
+        //}
     }
     }
