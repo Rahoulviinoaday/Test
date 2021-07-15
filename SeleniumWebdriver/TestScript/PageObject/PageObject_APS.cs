@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SeleniumWebdriver.TestScript.PageObject
 { 
 [TestClass]
-   public class TestPageObject
+   public class PageObject_APS
     {
     [TestMethod]
 
@@ -19,18 +19,23 @@ namespace SeleniumWebdriver.TestScript.PageObject
     {
 
         NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebsite());
-        HomePage homepage = new HomePage();
-           
-            LoginPage loginPage = new LoginPage();
-           
-            loginPage.Login(ObjectRepository.Config.GetUsername(), ObjectRepository.Config.GetPassword());
-          
-           // homepage.NavigationToLink();
+            HomePage homepage = new HomePage();
+            LoginPage login = new LoginPage();
             CreateWorkspace Newworkspace = new CreateWorkspace();
+            login.Login();
+            login.UserName();
+            login.ClickNext();
+            login.Password();
+            login.ClickSignIn();
+            login.ClickStaySignIn();
+            login.NavigateToHomepage();
+            homepage.NavigationToLink();
             Newworkspace.NavigateToWorkspaceform();
             Newworkspace.Createform();
+            homepage.UploadFile();
 
-    }
+
+        }
 
     }
 }

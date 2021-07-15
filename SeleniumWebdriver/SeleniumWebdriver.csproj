@@ -113,7 +113,9 @@
     <Compile Include="PageObject\LoginPage.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
-    <Compile Include="StepDefination\Login.cs" />
+    <Compile Include="StepDefination\CreateNewWorkspace.cs" />
+    <Compile Include="StepDefination\LogFlow.cs" />
+    <Compile Include="StepDefination\HomePage.cs" />
     <Compile Include="TestScript\APS_Scripts\APS_Login.cs" />
     <Compile Include="TestScript\APS_Scripts\CreateNewWorksSpace.cs" />
     <Compile Include="TestScript\APS_Scripts\DeleteRecords.cs" />
@@ -128,7 +130,7 @@
     <Compile Include="TestScript\MouseAction\TestMouseAction.cs" />
     <Compile Include="TestScript\MultipleBrowserWindow\TestMultipleBrowserWindow.cs" />
     <Compile Include="TestScript\PageNavigation\TestPAgeNavigation.cs" />
-    <Compile Include="TestScript\PageObject\TestPageObject.cs" />
+    <Compile Include="TestScript\PageObject\PageObject_APS.cs" />
     <Compile Include="TestScript\RedioButton\HandleRedioButton.cs" />
     <Compile Include="TestScript\TextBox\TestTextBox.cs" />
     <Compile Include="TestScript\WebDriverWait\WebDriverWait.cs" />
@@ -137,7 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="FeatureFiles\login.feature" />
+    <None Include="FeatureFiles\CreateWorkspace.feature" />
+    <None Include="FeatureFiles\LogFlow.feature" />
+    <None Include="FeatureFiles\HomePage.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

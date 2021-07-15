@@ -21,43 +21,69 @@ namespace SeleniumWebdriver.PageObject
         private By Forgotpassword = By.XPath("//a[@id='idA_PWD_ForgotPassword']");
         private By Singinbutton = By.XPath("//*[@type='submit']");
         private By Staysinginbtn = By.XPath("//*[@id='idSIButton9']"); // this is stay signed in "Yes" Button
-        private By Accountlink = By.LinkText("Account");
+        private IWebDriver driver;
+
+        public LoginPage(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
+        public LoginPage()
+        {
+        }
         #endregion
 
         #region Actions
-        public void Login(string username,string password)
+        public void Login()
         {
             ObjectRepository.Driver.FindElement(LoginBtton).Click();
-            Thread.Sleep(3000);
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            Thread.Sleep(2000);
             var newWindowHandle = ObjectRepository.Driver.WindowHandles[1];
             Assert.IsTrue(!string.IsNullOrEmpty(newWindowHandle));
             ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[1]);
-            ObjectRepository.Driver.FindElement(SigninTextBox).SendKeys(username);
-            ObjectRepository.Driver.FindElement(signinNext).Click();
-            ObjectRepository.Driver.FindElement(EnterPasswordTextBox).SendKeys(password);
-            Thread.Sleep(3000);
-            ObjectRepository.Driver.FindElement(Singinbutton).Click();
-            ObjectRepository.Driver.FindElement(Staysinginbtn).Click();
-            Thread.Sleep(2000);
-            var dashWindowHandle = ObjectRepository.Driver.WindowHandles[0];
-            Assert.IsTrue(!string.IsNullOrEmpty(dashWindowHandle));
-            ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[0]);
-            System.Threading.Thread.Sleep(4000);
-            ObjectRepository.Driver.Manage().Window.Maximize();
-            Thread.Sleep(5000);
-
         }
+        public void UserName()
+        {
+          
+            ObjectRepository.Driver.FindElement(SigninTextBox).SendKeys("Rahoulviinoaday@fs.co.uk");
+        }
+        public void ClickNext()
+        {
+            ObjectRepository.Driver.FindElement(signinNext).Click();
+        }
+        public void Password()
+        {
+            ObjectRepository.Driver.FindElement(EnterPasswordTextBox).SendKeys("Rvaishu$25");
+            Thread.Sleep(2000);
+        }
+        public void ClickSignIn()
+        {
+            ObjectRepository.Driver.FindElement(Singinbutton).Click();
+        }
+        public void ClickStaySignIn()
+        {
+            ObjectRepository.Driver.FindElement(Staysinginbtn).Click();
+        }
+        
         #endregion
 
         #region Navigation
 
-        public void NavigateToAccountpage()
+        public void NavigateToHomepage()
         {
-
-
-            ObjectRepository.Driver.FindElement(Accountlink).Click();
+            ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+            var dashWindowHandle = ObjectRepository.Driver.WindowHandles[0];
+            Assert.IsTrue(!string.IsNullOrEmpty(dashWindowHandle));
+            ObjectRepository.Driver.SwitchTo().Window(ObjectRepository.Driver.WindowHandles[0]);
+            //System.Threading.Thread.Sleep(4000);
+            ObjectRepository.Driver.Manage().Window.Maximize();
             Thread.Sleep(2000);
-            GenericHelper.TakeScreenShot("C:/Automation/Screenshot/Account.Jpeg");
+            Assert.IsTrue(GenericHelper.IsElementPresent(By.XPath("//ul[@class='ml-auto navbar-nav']/li[2]")));
+            Assert.AreEqual("Auto-Pagination Software", "Auto-Pagination Software");
+            GenericHelper.TakeScreenShot("C:/Automation/Screenshot/Homepage.Jpeg");
+           // GenericHelper.TakeScreenShot("HomeScreen");
+           // ObjectRepository.Driver.Close();
         }
         #endregion
     }

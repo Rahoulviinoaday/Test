@@ -11,19 +11,19 @@ namespace SeleniumWebdriver.BaseClasses
 {
     public class PageBase
     {
-        //private IWebDriver driver;
+        private IWebDriver driver;
 
-        //[FindsBy(How = How.LinkText, Using = "Home")]
-        //private IWebElement HomeLink;
+        [FindsBy(How = How.LinkText, Using = "Home")]
+        private readonly IWebElement HomeLink;
 
-        //[Obsolete]
-        //public PageBase(IWebDriver _driver)
-        //{
-        //    PageFactory.InitElements(_driver, this);
-        //    this.driver = _driver;
-        //}
+        [Obsolete]
+        public PageBase(IWebDriver _driver)
+        {
+            PageFactory.InitElements(_driver, this);
+            this.driver = _driver;
+        }
 
-        public void Logout()
+        protected void Logout()
         {
             if (GenericHelper.IsElementPresent(By.XPath("//div[@id='header']/ul[1]/li[11]/a")))
             {
@@ -33,14 +33,14 @@ namespace SeleniumWebdriver.BaseClasses
 
         }
 
-        //protected void NaviGateToHomePage()
-        //{
-        //    HomeLink.Click();
-        //}
+        protected void NaviGateToHomePage()
+        {
+            HomeLink.Click();
+        }
 
-        //public string Title
-        //{
-        //    get { return driver.Title; }
-        //}
+        public string Title
+        {
+            get { return driver.Title; }
+        }
     }
     }

@@ -67,7 +67,7 @@ namespace SeleniumWebdriver.TestScript.APS_Scripts
             Thread.Sleep(3000);
             //IAlert confirm=ObjectRepository.Driver.SwitchTo().Alert();
             //confirm.Accept();
-            IWebElement alerttext=ObjectRepository.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[1]/div"));
+            IWebElement alerttext=ObjectRepository.Driver.FindElement(By.XPath("//div[@class='modal-content']/div/div"));
             Console.WriteLine(alerttext.Text);
             ButtonHelper.ClickButton(By.XPath("//button[contains(text(),'Yes')]"));
             IWebElement deleterecord = ObjectRepository.Driver.FindElement(By.XPath("//*[@id='pdf-being-processed-container']/div[1]/div[2]/div/div/div/div"));
